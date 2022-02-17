@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/products', function () {
+    $product=['Ordinateur','Clavier','Souris','Imprimante'];
+    return view('products', compact('product'));
+});
+Route::get('/master', function () {
+    return view('master');
+});
+Route::get('/categorie', function () {
+    $catego=['Machines','Cables','Ets'];
+    return view('categorie',compact('catego'));
+});
