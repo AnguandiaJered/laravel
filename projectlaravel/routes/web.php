@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +28,14 @@ Route::get('/categorie', function () {
     $catego=['Machines','Cables','Ets'];
     return view('categorie',compact('catego'));
 });
+Route::get('/new_etudiant', function () {
+    return view('new_etudiant');
+})->name('new_etudiant');
+
+Route::post('/store_etudiant', function (Request $request) {
+
+    \DB::table('etudiants')->insert([
+        'noms'=>$request->noms,
+        'age' =>$request->age
+    ]);
+})->name('store_etudiant');
