@@ -1,6 +1,6 @@
 @extends('master')
 @section('content')
-    <form method="POST" action="{{ route('store_etudiant') }}">
+    <form method="POST" action="new_etudiant">
        @csrf 
         <input type="text" name="noms" placeholder="noms">
         <input type="number" name="age" placeholder="age">

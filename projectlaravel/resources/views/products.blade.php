@@ -4,7 +4,7 @@
 <a href="{{ route('new_etudiant') }}">New etudiants</a>
 <ul>
     @foreach ($product as $item)
-        <li>{{$item}}</li>
+        <li>{{$item->noms}}</li>
     @endforeach
 </ul>
 @endsection

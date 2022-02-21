@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\etudiantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,7 @@ use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/products', function () {
-    $product=['Ordinateur','Clavier','Souris','Imprimante'];
-    return view('products', compact('product'));
-});
+
 Route::get('/master', function () {
     return view('master');
 });
@@ -32,10 +30,6 @@ Route::get('/new_etudiant', function () {
     return view('new_etudiant');
 })->name('new_etudiant');
 
-Route::post('/store_etudiant', function (Request $request) {
+Route::post('/new_etudiant', [ etudiantController::class,'store' ]);
 
-    \DB::table('etudiants')->insert([
-        'noms'=>$request->noms,
-        'age' =>$request->age
-    ]);
-})->name('store_etudiant');
+Route::get('/products', [ etudiantController::class,'index']);
