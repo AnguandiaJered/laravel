@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Http\Controllers\etudiantController;
+use App\Http\Controllers\EtudiantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +30,8 @@ Route::get('/new_etudiant', function () {
     return view('new_etudiant');
 })->name('new_etudiant');
 
-Route::post('/new_etudiant', [ etudiantController::class,'store' ]);
+Route::post('/new_etudiant', [ EtudiantController::class,'store' ]);
 
-Route::get('/products', [ etudiantController::class,'index']);
+Route::get('/products', [ EtudiantController::class,'index']);
+Route::get('/edit_etudiant/{id}', [ EtudiantController::class,'edit']);
+Route::post('/edit_etudiant', [ EtudiantController::class,'update']);
