@@ -30,8 +30,9 @@ Route::get('/new_etudiant', function () {
     return view('new_etudiant');
 })->name('new_etudiant');
 
-Route::post('/new_etudiant', [ EtudiantController::class,'store' ]);
+Route::post('/store_etudiant', [ EtudiantController::class,'store' ])->name('store_etudiant');
 
-Route::get('/products', [ EtudiantController::class,'index']);
-Route::get('/edit_etudiant/{id}', [ EtudiantController::class,'edit']);
-Route::post('/edit_etudiant', [ EtudiantController::class,'update']);
+Route::get('/etudiants', [ EtudiantController::class,'index'])->name('etudiants');
+Route::get('/edit_etudiant/{id}', [ EtudiantController::class,'edit'])->name('edit_etudiant');
+Route::post('/update_etudiant', [ EtudiantController::class,'update'])->name('update_etudiant');
+Route::get('/delete_etudiant/{id}', [ EtudiantController::class,'destroy'])->name('delete_etudiant');

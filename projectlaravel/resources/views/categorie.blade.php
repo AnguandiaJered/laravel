@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts.master')
 @section('content')
 <h1>Categories</h1>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 

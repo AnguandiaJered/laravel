@@ -1,7 +1,15 @@
 @extends('layouts.master')
 @section('content')
 <div class="container">
-    <form method="POST" action="new_etudiant">
+    @if($errors->any())
+        <div class="alert alert-primary">
+            @foreach ($errors->all() as $item)
+                <p>{{ $item }}</p>
+            @endforeach
+        </div>
+    @endif
+   
+    <form method="POST" action="{{route('store_etudiant')}}">
        @csrf                 
             <div class="form-group">
                 <label for="noms">Noms</label>

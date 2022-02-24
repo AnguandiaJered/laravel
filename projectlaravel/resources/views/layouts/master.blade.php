@@ -26,7 +26,7 @@
 </head>
 <body>
    <ul id="menu">
-       <li><a href="/products">Products</a></li>
+       <li><a href="/etudiants">Etudiant</a></li>
        <li><a href="/categorie">Categories</a></li>
    </ul>
 
