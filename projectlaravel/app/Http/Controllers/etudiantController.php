@@ -22,7 +22,7 @@ class EtudiantController extends Controller
         ]);
 
         // return back()->with('message','Inserer avec success');
-        return \redirect()->route('etudiants')->with('message','Inserer avec success');
+        //return \redirect()->route('etudiants')->with('message','Inserer avec success');
     }
     public function edit($id)
     {
@@ -33,7 +33,7 @@ class EtudiantController extends Controller
     public function update(Request $request)
     {
         \DB::update("UPDATE etudiants set noms = ?, age = ? WHERE id= ?",[$request->noms,$request->age,$request->id]);
-        return \redirect()->route('etudiants');
+        return \redirect()->route('etudiants')->with('message','modification reussi aec succes');;
     }
     public function destroy($id)
     {
