@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\EtudiantController;
-
+use App\Models\Animal;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +36,17 @@ Route::get('/etudiants', [ EtudiantController::class,'index'])->name('etudiants'
 Route::get('/edit_etudiant/{id}', [ EtudiantController::class,'edit'])->name('edit_etudiant');
 Route::post('/update_etudiant', [ EtudiantController::class,'update'])->name('update_etudiant');
 Route::get('/delete_etudiant/{id}', [ EtudiantController::class,'destroy'])->name('delete_etudiant');
+
+Route::get('/animals',function(){
+    $data =Animal::all();
+    dd($data);
+});
+
+Route::post('/creates',function(){
+    $data =Animal::insert([
+        'name'=>'Chat',
+        'espece'=>'domestique'
+    ]);
+    // dd($data);
+    $data->save();
+});

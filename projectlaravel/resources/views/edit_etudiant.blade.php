@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
     <div class="container">
-        <form action="/edit_etudiant" method="POST" >
+        <form action="{{route('update_etudiant')}}" method="POST" >
         @csrf 
         <input type="hidden" value="{{$etudiant->id}}" name="id">
             <div class="form-group">
