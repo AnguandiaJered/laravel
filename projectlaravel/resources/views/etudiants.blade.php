@@ -5,7 +5,7 @@
         <div class="alert alert-primary">{{ \Session::get('message')}}</div>
     @endif
     <h1>Liste des etudiants</h1>
-    <a class="btn btn-primary offset-10" href="{{ route('new_etudiant') }}">New etudiants</a>
+    <!-- <a class="btn btn-primary offset-10" href="{{ route('new_etudiant') }}">New etudiants</a> -->
 
     <table class="table table-bordered table-striped mt-3">
         <thead>
